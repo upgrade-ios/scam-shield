@@ -1,0 +1,701 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- Your HTML code for the login page goes here -->
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;900&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - material icon link
+  -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <h1>
+        <a href="#" class="logo">ScamShield</a>
+      </h1>
+
+      <button class="menu-toggle-btn icon-box" data-menu-toggle-btn aria-label="Toggle Menu">
+        <span class="material-symbols-rounded  icon">menu</span>
+      </button>
+
+      <nav class="navbar">
+        <div class="container">
+
+          <ul class="navbar-list">
+
+            <li>
+              <a href="#" class="navbar-link active icon-box">
+                <span class="material-symbols-rounded  icon">grid_view</span>
+
+                <span>Home</span>
+              </a>
+            </li>
+
+            
+
+            <li>
+              <a href="#tasks" class="navbar-link icon-box">
+                <span class="material-symbols-rounded  icon">list</span>
+
+                <span>Recent Transactions</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="navbar-link icon-box">
+                <span class="material-symbols-rounded  icon">bar_chart</span>
+
+                <span>Reports</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="logout.php" class="navbar-link icon-box">
+                <span class="material-symbols-rounded  icon">exit_to_app</span>
+
+                <span>Log Out</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="user-action-list">
+
+            <li>
+              <a href="#" class="notification icon-box">
+                <span class="material-symbols-rounded  icon">notifications</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="header-profile">
+
+                <figure class="profile-avatar">
+                  <img src="./assets/images/avatar-1.jpg" alt="Elizabeth Foster" width="32" height="32">
+                </figure>
+
+                <div>
+                  <p class="profile-title"><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?></p>
+
+                  <p class="profile-subtitle">User</p>
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article class="container article">
+    <h2 class="h2 article-title">Hi <?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?></h2>
+
+
+      
+    
+
+      <p class="article-subtitle">Welcome to your Dashboard!</p>
+
+      <!-- 
+        - #HOME
+      -->
+
+      <section class="home">
+
+        <div class="card profile-card">
+
+          <button class="card-menu-btn icon-box" aria-label="More" data-menu-btn>
+            <span class="material-symbols-rounded  icon">more_horiz</span>
+          </button>
+
+          <ul class="ctx-menu">
+
+            <li class="ctx-item">
+              <button class="ctx-menu-btn icon-box">
+                <span class="material-symbols-rounded  icon" aria-hidden="true">edit</span>
+
+                <span class="ctx-menu-text">Edit</span>
+              </button>
+            </li>
+
+            <li class="ctx-item">
+              <button class="ctx-menu-btn icon-box">
+                <span class="material-symbols-rounded  icon" aria-hidden="true">cached</span>
+
+                <span class="ctx-menu-text">Refresh</span>
+              </button>
+            </li>
+
+            <li class="divider"></li>
+
+            <li class="ctx-item">
+              <button class="ctx-menu-btn red icon-box">
+                <span class="material-symbols-rounded  icon" aria-hidden="true">delete</span>
+
+                <span class="ctx-menu-text">Deactivate</span>
+              </button>
+            </li>
+
+          </ul>
+
+          <div class="profile-card-wrapper">
+
+            <figure class="card-avatar">
+              <img src="./assets/images/avatar-1.jpg" alt="Elizabeth Foster" width="48" height="48">
+            </figure>
+
+            <div>
+              <p class="card-title"><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?></p>
+
+              <p class="card-subtitle"></p>
+            </div>
+
+          </div>
+
+          <ul class="contact-list">
+
+            <li>
+              <a href="mailto:xyz@mail.com" class="contact-link icon-box">
+                <span class="material-symbols-rounded  icon">Email</span>
+
+                <p class="text"><?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?></p>
+              </a>
+            </li>
+
+            <li>
+              <a href="tel:00123456789" class="contact-link icon-box">
+                <span class="material-symbols-rounded  icon">call</span>
+
+                <p class="text">
+                <?php echo isset($_SESSION['phone']) ? $_SESSION['phone'] : ''; ?></p>
+              </a>
+            </li>
+
+          </ul>
+
+          <div class="divider card-divider"></div>
+
+          <ul class="progress-list">
+
+            <li class="progress-item">
+
+              <div class="progress-label">
+                <p class="progress-title">Phrase Key Recovery Process</p>
+
+                <data class="progress-data" value="85">1.0%</data>
+              </div>
+
+              <div class="progress-bar">
+                <div class="progress" style="--width: 4%; --bg: var(--blue-ryb);"></div>
+              </div>
+
+            </li>
+
+            <li class="progress-item">
+
+              <div class="progress-label">
+                <p class="progress-title">Overall Rating</p>
+
+                <data class="progress-data" value="7.5">100%</data>
+              </div>
+
+              <div class="progress-bar">
+                <div class="progress" style="--width: 100%; --bg:blue"></div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="card-wrapper">
+
+          <div class="card task-card">
+
+            <div class="card-icon icon-box green">
+              <span class="material-symbols-rounded  icon">task_alt</span>
+            </div>
+
+            <div>
+              <data class="card-data" value="21"><a href="../passkey.php">Passkey Retrival</a></data>
+
+              <p class="card-text"></p>
+            </div>
+
+          </div>
+
+          <div class="card task-card">
+
+            <div class="card-icon icon-box blue">
+              <span class="material-symbols-rounded  icon">drive_file_rename_outline</span>
+            </div>
+
+            <div>
+              <data class="card-data" value="21"><a href="../wallets.php">Temporary BTC Wallet</a></data>
+
+              
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="card revenue-card">
+
+          <button class="card-menu-btn icon-box" aria-label="More" data-menu-btn>
+            <span class="material-symbols-rounded  icon">more_horiz</span>
+          </button>
+
+          <ul class="ctx-menu">
+
+            <li class="ctx-item">
+              <button class="ctx-menu-btn icon-box">
+                <span class="material-symbols-rounded  icon" aria-hidden="true">edit</span>
+
+                <span class="ctx-menu-text">Edit</span>
+              </button>
+            </li>
+
+            <li class="ctx-item">
+              <button class="ctx-menu-btn icon-box">
+                <span class="material-symbols-rounded  icon" aria-hidden="true">cached</span>
+
+                <span class="ctx-menu-text">Refresh</span>
+              </button>
+            </li>
+
+          </ul>
+
+          <p class="card-title">Amount</p>
+
+          <data class="card-price" value="2100">$1,056,230.00</data><p style="color:red">Amount Onhold*</p>
+
+
+          <p class="card-text">Last Week</p>
+
+          <div class="divider card-divider"></div>
+
+          <ul class="revenue-list">
+
+            <li class="revenue-item icon-box">
+
+              <span class="material-symbols-rounded  icon  green">trending_up</span>
+
+              <div>
+                <data class="revenue-item-data" value="15">15%</data>
+
+                <p class="revenue-item-text">Prev Week</p>
+              </div>
+
+            </li>
+
+            <li class="revenue-item icon-box">
+
+              <span class="material-symbols-rounded  icon  red">trending_down</span>
+
+              <div>
+                <data class="revenue-item-data" value="10">10%</data>
+
+                <p class="revenue-item-text">Prev Month</p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </section>
+
+
+
+
+      <!-- 
+        - #PROJECTS
+      -->
+
+      <section class="projects">
+
+        <div class="section-title-wrapper">
+          <h2 class="section-title">Recent posts from users</h2>
+
+          <button class="btn btn-link icon-box">
+            <span>View All</span>
+
+            <span class="material-symbols-rounded  icon" aria-hidden="true">arrow_forward</span>
+          </button>
+        </div>
+
+        <ul class="project-list">
+
+          <li class="project-item">
+            <div class="card project-card">
+
+              <button class="card-menu-btn icon-box" aria-label="More" data-menu-btn>
+                <span class="material-symbols-rounded  icon">more_horiz</span>
+              </button>
+
+              <ul class="ctx-menu">
+
+                <li class="ctx-item">
+                  <button class="ctx-menu-btn icon-box">
+                    <span class="material-symbols-rounded  icon" aria-hidden="true">visibility</span>
+
+                    
+                  </button>
+                </li>
+
+                <li class="ctx-item">
+                  <button class="ctx-menu-btn icon-box">
+                    <span class="material-symbols-rounded  icon" aria-hidden="true"></span>
+
+                    <span class="ctx-menu-text"></span>
+                  </button>
+                </li>
+
+                <li class="divider"></li>
+
+                <li class="ctx-item">
+                  <button class="ctx-menu-btn red icon-box">
+                    <span class="material-symbols-rounded  icon" aria-hidden="true"></span>
+
+                    <span class="ctx-menu-text"></span>
+                  </button>
+                </li>
+
+              </ul>
+
+              <time class="card-date" datetime="2022-04-09">Jan 09, 2024</time>
+
+              <h3 class="card-title">
+                <a href="#">I never thought I'd see a penny of the money I lost to a scam, but this site worked wonders! Their team was dedicated, communicative, and, most importantly, successful in getting my funds back. I can't thank them enough for their expertise and support throughout the process." - John D </a>
+              </h3>
+
+              <div class="card-badge blue">Likes: 50m </div>
+
+              
+
+              <div class="card-progress-box">
+
+                <div class="progress-label">
+                  <span class="progress-title">Monthly viewers</span>
+
+                  <data class="progress-data" value="75">95%</data>
+                </div>
+
+                <div class="progress-bar">
+                  <div class="progress" style="--width: 95%; --bg: var(--emerald);"></div>
+                </div>
+
+              </div>
+
+              <ul class="card-avatar-list">
+
+                <li class="card-avatar-item">
+                  <a href="#">
+                    <img src="./assets/images/avatar-1.jpg" alt="Elizabeth Foster" width="32" height="32">
+                  </a>
+                </li>
+
+                <li class="card-avatar-item">
+                  <a href="#">
+                    <img src="./assets/images/avatar-2.jpg" alt="John Foster" width="32" height="32">
+                  </a>
+                </li>
+
+              </ul>
+
+            </div>
+          </li>
+
+          
+
+
+              </ul>
+
+            </div>
+          </li>
+
+        </ul>
+
+      </section>
+
+
+
+
+      <!-- 
+        - #TASKS
+      -->
+
+      <section class="tasks">
+
+        <div class="section-title-wrapper">
+          <h2 class="section-title">Recent Transactions</h2>
+
+          <button class="btn btn-link icon-box">
+            <span>View All</span>
+
+            <span class="material-symbols-rounded  icon" aria-hidden="true">arrow_forward</span>
+          </button>
+        </div>
+
+        <ul class="tasks-list">
+
+          <li class="tasks-item">
+            <div class="card task-card">
+
+              <div class="card-input">
+                <input type="checkbox" name="task-1" id="task-1">
+
+                <label for="task-1" class="task-label">FROM: BTCMarkets. Deposit...
+                  
+                </label>
+              </div>
+
+              <div class="card-badge cyan radius-pill">10/07/2023 - 16:25:59</div>
+
+              <ul class="card-meta-list">
+
+                <li>
+                  <div class="meta-box icon-box">
+                    <span class="material-symbols-rounded  icon">list</span>
+
+                    <span>$-5,493</span>
+                  </div>
+                </li>
+
+                <li>
+                  
+                </li>
+
+                <li>
+                  <div class="card-badge green">COMPLETED</div>
+                </li>
+
+              </ul>
+
+            </div>
+          </li>
+
+          <li class="tasks-item">
+            <div class="card task-card">
+
+              <div class="card-input">
+                <input type="checkbox" name="task-2" id="task-2">
+
+                <label for="task-2" class="task-label">
+                  FROM: 0x664fe3934ef8...31bb
+                </label>
+              </div>
+
+              <div class="card-badge cyan radius-pill">02/18/2024 - 05:21:47</div>
+
+              <ul class="card-meta-list">
+
+                <li>
+                  <div class="meta-box icon-box">
+                    <span class="material-symbols-rounded  icon">list</span>
+
+                    <span>$-12,253</span>
+                  </div>
+                </li>
+
+                
+
+                <li>
+                  <div class="card-badge green">COMPLETED</div>
+                </li>
+
+              </ul>
+
+            </div>
+          </li>
+
+          <li class="tasks-item">
+            <div class="card task-card">
+
+              <div class="card-input">
+                <input type="checkbox" name="task-3" id="task-3">
+
+                <label for="task-3" class="task-label">
+                  FROM: 0x144dee9b18a1c79a2fc...
+                </label>
+              </div>
+
+              <div class="card-badge radius-pill">02/18/2024 - 05:21:47</div>
+
+              <ul class="card-meta-list">
+
+                <li>
+                  <div class="meta-box icon-box">
+                    <span class="material-symbols-rounded  ">list</span>
+
+                    <span>$-29,00</span>
+                  </div>
+                </li>
+
+                
+
+                <li>
+                  <div class="card-badge green">COMPLETED</div>
+                </li>
+
+              </ul>
+
+            </div>
+          </li>
+
+          <li class="tasks-item">
+            <div class="card task-card">
+
+              <div class="card-input">
+                <input type="checkbox" name="task-4" id="task-4">
+
+                <label for="task-4" class="task-label">
+                  FROM:0x664fe3934ef8...31bb
+                </label>
+              </div>
+
+              <div class="card-badge radius-pill">10/07/2023 - 22:50:35</div>
+
+              <ul class="card-meta-list">
+
+                <li>
+                  <div class="meta-box icon-box">
+                    <span class="material-symbols-rounded  icon"></span>
+
+                    <span>$-40</span>
+                  </div>
+                </li>
+
+                
+
+                <li>
+                  <div class="card-badge green">COMPLETED</div>
+                </li>
+
+              </ul>
+
+            </div>
+          </li>
+
+        </ul>
+
+        <button class="btn btn-primary" data-load-more>
+          <span class="spiner"></span>
+
+          <span>Load More</span>
+        </button>
+
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <ul class="footer-list">
+
+        <li class="footer-item">
+          <a href="#" class="footer-link">About</a>
+        </li>
+
+        <li class="footer-item">
+          <a href="" class="footer-link">Privacy</a>
+        </li>
+
+        <li class="footer-item">
+          <a href="" class="footer-link">Terms</a>
+        </li>
+
+        
+        <li class="footer-item">
+          <a href="" class="footer-link">Support</a>
+        </li>
+
+        
+      </ul>
+
+      <p class="copyright">
+        &copy; 2024 <a href="#" class="copyright-link">ScamShield</a>. All Rights Reserved
+      </p>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>
+
